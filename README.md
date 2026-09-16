@@ -6,7 +6,7 @@
 
 苹果手机：
 
-1. 通过 Apple 官方页面自行创建可用的 Apple 账号。
+1. 按 Apple 官方流程自行创建美国或中国香港地区的 Apple 账号；已有国内账号先查看改区规则。
 2. 打开 KTM Cloud 注册入口，按页面说明安装并连接网络工具。
 3. 从 App Store 安装 Telegram Messenger。
 4. 使用自己的手机号登录 Telegram，并进入频道。
@@ -27,6 +27,7 @@
 | 频道入口 | https://fanshen-trading-park.vercel.app/ |
 | Apple 账号注册 | https://account.apple.com/ |
 | Apple 官方注册教程 | https://support.apple.com/zh-cn/108647 |
+| Apple 官方更改国家或地区规则 | https://support.apple.com/zh-cn/118283 |
 | iPhone Telegram | https://apps.apple.com/us/app/telegram-messenger/id686449807 |
 | 安卓 Telegram 官网 | https://telegram.org/android |
 | 安卓官方 APK | https://telegram.org/dl/android/apk |
