@@ -4,7 +4,8 @@ window.GUIDE_CONFIG = {
   channelUrl: "https://fanshen-trading-park.vercel.app/",
   apple: {
     createUrl: "https://account.apple.com/",
-    tutorialUrl: "https://support.apple.com/zh-cn/108647"
+    tutorialUrl: "https://support.apple.com/zh-cn/108647",
+    regionGuideUrl: "https://support.apple.com/zh-cn/118283"
   },
   telegram: {
     iphoneUrl: "https://apps.apple.com/us/app/telegram-messenger/id686449807",
