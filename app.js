@@ -42,13 +42,15 @@
   const flows = {
     iphone: [
       {
-        label: '注册账号', sub: '自行创建 Apple 账号', title: '注册可用的 Apple 账号',
-        description: '我们不提供 Apple 账号。请使用自己的邮箱和手机号，按 Apple 官方说明创建。',
-        content: () => resource('创建 Apple 账号', 'Apple 官方账号页面', config.apple?.createUrl, '开始注册', 'apple') + resource('官方文字教程', '查看 Apple 的完整注册说明', config.apple?.tutorialUrl, '查看教程', 'browser') + list([
-          '打开 Apple 官方账号页面，选择创建新账户。',
-          '使用自己的邮箱、真实生日和可长期接收验证码的手机号；国家或地区选择能下载 Telegram 的地区，例如美国。',
-          '按 Apple 页面完成邮箱和手机验证。若系统要求付款或账单资料，请按页面真实要求填写；无法完成时不要购买来路不明的共享账号。'
-        ]) + notice('账号密码和验证码只在 Apple 官方页面输入。本页不会收集这些信息。', true),
+        label: '注册账号', sub: '注册美国或香港地区', title: '注册外区 Apple 账号',
+        description: '我们不提供 Apple 账号。请按 Apple 官方流程，使用自己的信息注册美国或中国香港地区的账号。',
+        content: () => resource('Apple 官方注册入口', '在官网创建 Apple 账号', config.apple?.createUrl, '打开官网', 'apple') + resource('Apple 官方创建说明', '包含国家或地区设置步骤', config.apple?.tutorialUrl, '查看教程', 'browser') + resource('更改国家或地区规则', '已有国内账号时先查看限制', config.apple?.regionGuideUrl, '查看规则', 'browser') + list([
+          '先确定要使用的地区：美国或中国香港。只有在你能长期使用该地区所需的手机号、付款方式或账单信息时，才选择对应地区。',
+          '如果 App Store 已登录国内商店账号，先打开“设置”→你的姓名→“媒体与购买项目”→“退出登录”（不要退出 iCloud），再返回 App Store，点击头像并选择“创建新 Apple 账户”；按页面选择美国或中国香港。',
+          '填写自己的邮箱、真实生日和能长期接收验证码的手机号，完成邮箱和手机验证。',
+          '如果系统要求该地区的付款方式或账单地址，只填写真实、有效的信息；没有对应资料时不要填虚假地址，也不要购买共享账号。',
+          '注册完成后，只在 App Store 的“媒体与购买项目”中登录这个账号，用它下载 Telegram。已有中国大陆账号需要改区时，先阅读 Apple 的官方规则并按要求处理余额、订阅和付款方式。'
+        ]) + notice('Apple 账号密码和验证码只在 Apple 官方页面或系统设置中输入。本页不提供外区账号，也不会收集任何账号信息。', true),
         next: '账号已准备好'
       },
       {
@@ -196,7 +198,7 @@
     }
   }
   function openHelp() {
-    $('#help-content').innerHTML = `<details open><summary>微信或 QQ 里点链接没反应？</summary><p>点击右上角“…”菜单，选择“在浏览器打开”或“用默认浏览器打开”。也可以点击页面中的“复制链接”，粘贴到 Safari、Chrome 或手机自带浏览器。</p></details><details><summary>Apple 账号注册不成功？</summary><p>请使用自己的邮箱和能长期接收验证码的手机号，并按 Apple 官方页面要求填写信息。若账号地区要求你无法提供的付款或账单资料，不要购买来路不明的共享账号。</p></details><details><summary>安卓 APK 无法安装？</summary><p>确认安装包来自 telegram.org。只对下载所用浏览器临时允许“安装未知应用”，安装后关闭权限。系统提示不兼容时，请打开 Telegram 安卓官网查看其他下载方式。</p></details><details><summary>Telegram 收不到验证码？</summary><p>检查国家区号和手机号。已有账号的验证码可能发送到其他已登录设备。按倒计时等待，避免连续重复请求。</p><a href="https://telegram.org/faq#login-and-sms" target="_blank" rel="noopener noreferrer external">查看 Telegram 官方帮助 ↗</a></details>`;
+    $('#help-content').innerHTML = `<details open><summary>微信或 QQ 里点链接没反应？</summary><p>点击右上角“…”菜单，选择“在浏览器打开”或“用默认浏览器打开”。也可以点击页面中的“复制链接”，粘贴到 Safari、Chrome 或手机自带浏览器。</p></details><details><summary>外区 Apple 账号注册不成功？</summary><p>确认是在 App Store 的“媒体与购买项目”里创建或登录，且国家/地区、手机号、付款和账单信息真实有效。已有中国大陆账号改区前，先按 Apple 官方规则用完余额、取消订阅，并准备可能要求的新地区付款方式；不要购买共享账号或填写虚假资料。</p></details><details><summary>安卓 APK 无法安装？</summary><p>确认安装包来自 telegram.org。只对下载所用浏览器临时允许“安装未知应用”，安装后关闭权限。系统提示不兼容时，请打开 Telegram 安卓官网查看其他下载方式。</p></details><details><summary>Telegram 收不到验证码？</summary><p>检查国家区号和手机号。已有账号的验证码可能发送到其他已登录设备。按倒计时等待，避免连续重复请求。</p><a href="https://telegram.org/faq#login-and-sms" target="_blank" rel="noopener noreferrer external">查看 Telegram 官方帮助 ↗</a></details>`;
     $('#contact-action').innerHTML = channelResource();
     if (!$('#help-dialog').open) $('#help-dialog').showModal();
   }
